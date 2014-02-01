@@ -98,18 +98,24 @@ $content = render($page['content']);
         
       </div>
     <?php } ?>
-    <div class="footer">
-      <?php print render($page['sidebar_footer']); ?>
-      <div class="clr"></div>
-    </div>
   </div>
+  </div>
+  <div class="clr"></div> 
+</div>
+
+<div class="container-fluid pvheader">
+  <div class="container-out">
+      <div class="logo"><a href="<?php print check_url($front_page); ?>" title="<?php print $site_name; ?>"><img src="<?php print $logo; ?>" alt="<?php print $site_name; ?>" width="85px" /></a></div>
+      <?php print render($page['sidebar_footer']); ?>    
   </div>
 </div>
-<div class="container">
+<?php
+/*<div class="container">
   <div class="row">
     <div class="span6">
       <div class="copy"><?php print render($page['footer_copyright']); ?></div>
     </div>
   </div>
-</div>
+</div>*/
+?>
 <?php //print '<pre>'. check_plain(print_r($page, 1)) .'</pre>'; ?>
