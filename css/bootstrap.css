@@ -272,7 +272,8 @@ a:focus {
   margin-right: auto;
   margin-left: auto;
   *zoom: 1;
-	width:970px;
+	/*width:970px; <--old modded 010214*/
+	width: 1280px;
 	padding-top:10px;
 	padding-bottom:10px;
 }
@@ -280,7 +281,12 @@ a:focus {
 .navbar-static-top .container,
 .navbar-fixed-top .container,
 .navbar-fixed-bottom .container {
-  width: 950px;
+  /*width:950px; <--old modded 010214*/
+  width: 1280px;
+}
+
+.span13 {
+  width: 1080px;
 }
 .span12 {
   width: 950px;
@@ -312,6 +318,11 @@ a:focus {
 .span3 {
   width: 230px;
 }
+
+.span25 {
+width: 180px;
+}
+
 .span2 {
   width: 150px;
 }
@@ -6158,13 +6169,15 @@ button.close {
     margin-left: 10px;
   }
 	.container-out {
-	  width:970px;
+	  /*width:970px; modded on 01022014*/
+	  width: 1280px;
   }
   .container,
   .navbar-static-top .container,
   .navbar-fixed-top .container,
   .navbar-fixed-bottom .container {
-    width: 950px;
+    /*width: 950px; modded 01022014*/
+	width: 1080px;
   }
   .span12 {
     width: 950px;
@@ -6196,6 +6209,11 @@ button.close {
   .span3 {
     width: 230px;
   }
+  /*modded 01022014*/
+  .span25 {
+    width: 180px;
+  }
+  
   .span2 {
     width: 150px;
   }
