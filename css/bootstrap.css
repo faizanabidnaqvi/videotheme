@@ -405,6 +405,10 @@ width: 180px;
 	border: 1px solid #ebebeb;
 	background-color: #fdfefe;
 }
+
+.mob-right{
+	float:right;
+}
 .search {
 	  margin-top: 2px;
   }
@@ -5566,6 +5570,11 @@ button.close {
   .container-fluid {
     padding: 0;
   }
+  
+  .mob-right{
+	float:inherit;
+}
+
   .dl-horizontal dt {
     float: none;
     clear: none;
@@ -5778,6 +5787,10 @@ button.close {
   .form-item .form-managed-file .form-file {
     width: 50%;
   }
+  
+  .mob-right{
+	float:inherit;
+}
   .form-item.form-type-checkbox .description {
     margin: 0;
   }
@@ -5810,6 +5823,10 @@ button.close {
   .navbar-fixed-bottom .container {
     width: 734px;
   }
+  
+  .mob-right{
+	float:inherit;
+}
   .span12 {
     width: 734px;
   }

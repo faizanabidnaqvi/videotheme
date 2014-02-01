@@ -39,7 +39,7 @@ $content = render($page['content']);
 	<div class="left">
 	<?php print render($page['sidebar_left']); ?>
 	</div>
-	<div class="right">
+	<div class="mob-right">
   <div class="container">
     <div class="row">
       <div class="span12">
