@@ -40,7 +40,7 @@ $content = render($page['content']);
 	<?php print render($page['sidebar_left']); ?>
 	</div>
 	<div class="mob-right">
-  <div class="container">
+  <div class="container pvcontainer">
     <div class="row">
       <div class="span12">
         <?php /*<div class="breadcrumb"><?php print $breadcrumb; ?></div> */ ?>
@@ -61,14 +61,12 @@ $content = render($page['content']);
         </div>
       </div>
       <div class="row">
-        <div class="span8 home">
+        <div class="span12 home">
           <?php print render($page['sidebar_home_banner']); ?>
           <h1 class="title"><?php print render($page['exposed_form']); ?><?php print $title; ?></h1>
           <?php print $content; ?>
         </div>
-        <div class="span4 top-padd">
-          <?php print render($page['sidebar_right']); ?>
-        </div>
+        
       </div>
     <?php } elseif($set_video = provideo_set_video(FALSE, TRUE) ) { ?>
       <div class="row">
@@ -84,24 +82,20 @@ $content = render($page['content']);
         </div>
       </div>
       <div class="row">
-        <div class="span8">
+        <div class="span12">
           <?php print $content; ?>
         </div>
-        <div class="span4 top-padd">
-          <?php print render($page['sidebar_right']); ?>
-        </div>
+        
       </div>
     <?php } else { ?>
       <div class="row">
-        <div class="span8">
+        <div class="span12">
           <?php print render($page['exposed_form']); ?> <h1 class="title"><?php print $title; ?> <?php print provideo_get_count_nodes(); ?></h1>
           <?php if(arg(0) == 'blog' ) { print '<div class="row">'; }?>
           <?php print $content; ?>
           <?php if(arg(0) == 'blog' ) { print '</div>'; }?>
         </div>
-        <div class="span4">
-          <?php print render($page['sidebar_right']); ?>
-        </div>
+        
       </div>
     <?php } ?>
     <div class="footer">

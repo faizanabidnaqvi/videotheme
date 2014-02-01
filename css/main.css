@@ -9,7 +9,12 @@ body {
 
 .pvheader {
 	background: #FFF;
-	border-bottom: 5px solid #3498db;
+	border-bottom: 3px solid #3498db;
+}
+
+.pvcontainer{
+	background: #FFF;
+	border-left: 3px solid #ACACAC;
 }
 
 .clr {
