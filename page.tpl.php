@@ -8,9 +8,6 @@ $content = render($page['content']);
     <div class="left">
       <div class="logo"><a href="<?php print check_url($front_page); ?>" title="<?php print $site_name; ?>"><img src="<?php print $logo; ?>" alt="<?php print $site_name; ?>" /></a></div>
       <select id="mselect"></select>
-      <?php print render($page['sidebar_main_menu']); ?>    
-    </div>
-    <div class="right">
       <div class="search">
         <form action="<?php print url("search/node") ?>" id="SearchForm" method="post">
         	<input type="text" value="<?php print t('Enter keyword to search'); ?>" id="searchBox" name="keys" onblur="if(this.value == '') { this.value = '<?php print t('Enter keyword to search'); ?>'; }" onfocus="if(this.value == '<?php print t('Enter keyword to search'); ?>') { this.value = ''; }" class="bar" />
@@ -18,7 +15,10 @@ $content = render($page['content']);
           <input type="hidden" name="form_token" id="edit-search-block-form-form-token" value="<?php print drupal_get_token("search_form") ?>"  />
 					<input type="hidden" name="form_id" id="edit-search-block-form" value="search_form"  />
         </form>
-      </div>
+      </div>    
+    </div>
+    <div class="right">
+      
       <?php
         $out = '';
         if ($user->uid) {
