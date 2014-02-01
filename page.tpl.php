@@ -40,7 +40,7 @@ $content = render($page['content']);
 	<?php print render($page['sidebar_left']); ?>
 	</div>
 	<div class="mob-right">
-  <div class="container pvcontainer">
+  <div class="container ">
     <div class="row">
       <div class="span12">
         <?php /*<div class="breadcrumb"><?php print $breadcrumb; ?></div> */ ?>
