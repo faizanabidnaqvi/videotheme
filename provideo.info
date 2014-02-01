@@ -84,6 +84,7 @@ settings[tm_tag_link_border_active_color] = eaedf2
 regions[sidebar_main_menu] = Sidebar Main Menu
 regions[content] = Content
 regions[sidebar_right] = Sidebar Right
+regions[sidebar_left] = Sidebar Left
 regions[sidebar_footer] = Sidebar Footer
 regions[sidebar_tabs] = Sidebar Tabs
 regions[exposed_form] = Exposed Form
