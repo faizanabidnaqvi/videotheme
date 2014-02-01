@@ -5580,6 +5580,8 @@ button.close {
   
   .mob-right{
 	float:inherit;
+	border-left:inherit;
+	padding-left:inherit
 }
 
   .dl-horizontal dt {
@@ -5801,6 +5803,8 @@ button.close {
   
   .mob-right{
 	float:inherit;
+	border-left:inherit;
+	padding-left:inherit
 }
   .form-item.form-type-checkbox .description {
     margin: 0;
@@ -5837,6 +5841,8 @@ button.close {
   
   .mob-right{
 	float:inherit;
+	border-left:inherit;
+	padding-left:inherit
 }
   .span12 {
     width: 734px;
