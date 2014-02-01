@@ -36,6 +36,10 @@ $content = render($page['content']);
 </div>
 
 <div class="container-out pvcontent">
+	<div class="left">
+	<?php print render($page['sidebar_left']); ?>
+	</div>
+	<div class="right">
   <div class="container">
     <div class="row">
       <div class="span12">
@@ -105,14 +109,12 @@ $content = render($page['content']);
       <div class="clr"></div>
     </div>
   </div>
+  </div>
 </div>
 <div class="container">
   <div class="row">
     <div class="span6">
       <div class="copy"><?php print render($page['footer_copyright']); ?></div>
-    </div>
-    <div class="span6">
-      <div class="designdby">Designed by <a href="http://www.themesnap.com">ThemeSnap.com</a></div>
     </div>
   </div>
 </div>
