@@ -36,11 +36,6 @@ $content = render($page['content']);
 </div>
 
 <div class="container-out pvcontent">
-<div class="left">
-	<?php print render($page['sidebar_left']); ?>
-</div>	
-
-<div class="right">
   <div class="container">
     <div class="row">
       <div class="span12">
@@ -49,7 +44,6 @@ $content = render($page['content']);
         <?php if($tabs) { print render($tabs); } ?>
       </div>
     </div>
-</div>
     <?php if(drupal_is_front_page()) { ?>
       <div class="row">
         <div class="span12">
@@ -117,7 +111,9 @@ $content = render($page['content']);
     <div class="span6">
       <div class="copy"><?php print render($page['footer_copyright']); ?></div>
     </div>
-    
+    <div class="span6">
+      <div class="designdby">Designed by <a href="http://www.themesnap.com">ThemeSnap.com</a></div>
+    </div>
   </div>
 </div>
 <?php //print '<pre>'. check_plain(print_r($page, 1)) .'</pre>'; ?>
