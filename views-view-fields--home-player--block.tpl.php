@@ -1,0 +1,2 @@
+<h3 class="title"><b><?php print t('Now Playing'); ?></b><?php print $fields['title']->content; ?></h3>
+<?php if (isset($fields['field_video']->content)) { print $fields['field_video']->content; } if (isset($fields['field_embeddedvideo_1']->content)) { print $fields['field_embeddedvideo_1']->content; }  ?>
