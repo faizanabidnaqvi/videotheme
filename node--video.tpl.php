@@ -24,7 +24,7 @@ $rate = rate_get_results('node', $node->nid, 1);
       <?php print render($title_suffix); ?>
       <a href="<?php print $node_url; ?>" class="play"><?php print t('Play'); ?></a>
       <div class="stat"><?php print t('!count views in !time',array('!count' => $statistics['totalcount'], '!time' => format_interval(time() - $node->created,1))); ?></div>
-      <?php print render($content['rate_fivestar']); ?>
+      <?php /*print render($content['rate_fivestar']);*/ ?>
       <?php if (isset($content['unwatched_link'])) print $content['unwatched_link']; ?>
     </div>
   </div>
@@ -32,7 +32,7 @@ $rate = rate_get_results('node', $node->nid, 1);
   <?php if (isset($content['field_recommended']['#items'][0]['value']) and $content['field_recommended']['#items'][0]['value']) {?><a href="<?php print $node_url; ?>"><div class="pv-recommended"><div class="pv-recommended-in"><?php print t('Recommended'); ?></div></div></a><?php } ?>
   <div class="img1"><?php print render($content['field_video']); ?></div>
   <h2><a href="<?php print $node_url; ?>"><?php print truncate_utf8($title, 70, FALSE, TRUE); ?></a></h2>
-  <div class="star"><?php print render($content['rate_fivestar']); ?></div>
+  
   <?php //print '<pre>'. check_plain(print_r($content['field_featured']['#items'][0], 1)) .'</pre>'; ?>
 </div>
 <?php } else { ?>
@@ -104,8 +104,29 @@ $rate = rate_get_results('node', $node->nid, 1);
 </div>
  
 <div class="clr"></div>
-<div class="videoby"><?php print t('Added by !name !time ago and already has !count!', array('!name' => $name, '!time' => format_interval(time() - $node->created,1), '!count' => format_plural($statistics['totalcount'], '1 view', '@count views') )); ?></div>   
-<div class="clr"></div>    		
+<div class="row-fluid">
+	<div class="span1">
+		<!-- Add gravatar here -->
+			<?php $user = user_load($uid); print theme('user_picture', array('account' =>$user)); ?>
+	</div>
+		<div class="span11">
+		<div class="videoby">
+			<?php print $name; ?>
+		</div>
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="left">
+				<!-- Add like widget here -->
+					<?php print render($content['rate_video_like']); ?>
+				</div>
+				<div class="right">
+				<?php print t('!count', array('!count' => format_plural($statistics['totalcount'], '1 view', '@count views') )); ?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+  		
 <div class="tabcont" id="subscribetab">
       <?php if ($us) { 
         print $us; 

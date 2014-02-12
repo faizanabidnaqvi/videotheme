@@ -83,7 +83,6 @@ $content = render($page['content']);
 				<div class="span8">
 				<!--video-->
 					<div class="pv-video pv-node" id="pvvideo">
-					<h1 class="title"><b><?php print t('Now Playing'); ?></b> <?php print $title; ?></h1>
 					<?php print $set_video; ?>
 					</div>
 					<?php print $content; ?>
