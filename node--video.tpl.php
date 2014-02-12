@@ -54,21 +54,8 @@ $rate = rate_get_results('node', $node->nid, 1);
 ?>
     
 <?php provideo_set_video(render($content['field_video'])); ?>
+<h1 class="title"><?php print $title; ?></h1>
 
-<div class="pv-n-s"><?php print render($content['rate_fivestar']); ?></div>
-<ul class="tablinks">
-  <li id="share"><a href="#" class="share-btn"><?php print t('Share'); ?></a></li>
-  <li id="embed"><a href="#" class="embed-btn"><?php print t('Embed'); ?></a></li>
-  <li id="addto">
-    <?php if ($us) { ?><a href="#" class="addto-btn"><?php print t('Add to Favorites'); ?><?php /*<span class="downarrow">&nbsp;</span> */?></a>
-    <?php } else { if (isset($user->data['provideo_addto'][$node->nid])) { ?>
-    <a href="<?php print url('addto/'.$node->nid, array('query' => $destination)); ?>" class="addto-btn"><?php print t('Added to Favorites'); ?></a>
-    <?php } else { ?>
-    <a href="<?php print url('addto/'.$node->nid, array('query' => $destination)); ?>"><?php print t('Add to Favorites'); ?></a><?php }} ?>
-  </li>
-  <li id="flag" ><a href="#" class="flag-btn"><?php print t('Report Video'); ?></a></li>
-</ul>
-<div class="clr"></div>
 
 <div class="tabcont" id="sharetab">
   <input type="text" value="<?php print url('node/'.$node->nid, array('absolute' => TRUE)); ?>" name="s" class="chain" />
@@ -117,21 +104,6 @@ $rate = rate_get_results('node', $node->nid, 1);
 </div>
  
 <div class="clr"></div>
-<div class="subscribe">
-  <?php 
-    if ($us) {
-      $su = t('Subscribe Now →');
-      $sa = ' class="subscribe-btn"';
-    } elseif (isset($user->data['provideo_subscribe'][$node->uid])){
-      $su = t('Subscribed'); 
-      $sa = ' class="subscribe-btn un"';
-    } else {
-      $su = t('Subscribe Now →'); 
-      $sa = '';
-    }?>
-  <a href="<?php print url('subscribe/'.$node->nid, array('query' => $destination)); ?>"<?php print $sa; ?>"><?php print $su; ?></a>
-  <div class="clr"></div>
-</div>
 <div class="videoby"><?php print t('Added by !name !time ago and already has !count!', array('!name' => $name, '!time' => format_interval(time() - $node->created,1), '!count' => format_plural($statistics['totalcount'], '1 view', '@count views') )); ?></div>   
 <div class="clr"></div>    		
 <div class="tabcont" id="subscribetab">

@@ -86,6 +86,7 @@ $content = render($page['content']);
 					<h1 class="title"><b><?php print t('Now Playing'); ?></b> <?php print $title; ?></h1>
 					<?php print $set_video; ?>
 					</div>
+					<?php print $content; ?>
 				</div>
 				<div class="span4">
 				<!--best videos-->
@@ -95,11 +96,11 @@ $content = render($page['content']);
 					</div>
 				</div>
 			</div>
-			<div class="row-fluid">
+		<!--	<div class="row-fluid">
 				<div class="span12">
-				<!--showcase videos and content-->
-					<?php print $content; ?>
-				</div>
+				showcase videos and content
+					 print $content;
+				</div>-->
 			</div>
 			<?php } else { ?>
 			<div class="row-fluid">
