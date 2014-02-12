@@ -1,1 +1,1 @@
-<a href="<?php print url('taxonomy/term/'.$fields['tid']->content); ?>"><?php print $fields['name']->content; ?></a> <?php print provideo_get_category_count_nodes($fields['tid']->content); ?>
+<a href="<?php print url('taxonomy/term/'.$fields['tid']->content); ?>"><?php print $fields['name']->content; ?></a> <?php /*print provideo_get_category_count_nodes($fields['tid']->content);*/ ?>
