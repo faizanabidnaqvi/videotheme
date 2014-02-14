@@ -282,6 +282,16 @@ a:focus {
 .navbar-fixed-bottom .container {
   width: 950px;
 }
+
+.header-box {
+	height:120px;
+	position:relative;
+}
+
+.bottom-align{
+	position:absolute;
+	bottom:0;
+}
 .span12 {
   width: 950px;
 }

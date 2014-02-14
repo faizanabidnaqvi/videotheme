@@ -11,48 +11,67 @@ $content = render($page['content']);
 				<div class="logo"><a href="<?php print check_url($front_page); ?>" title="<?php print $site_name; ?>"><img src="<?php print $logo; ?>" alt="<?php print $site_name; ?>" /></a></div>
 			</div>
 			<div class="span8">
-			<!--search,upload-->
-				<select id="mselect"></select>
-				<div class="search ">
-				<form action="<?php print url("search/node") ?>" id="SearchForm" method="post">
-					<input type="text" value="<?php print t('Enter keyword to search'); ?>" id="searchBox" name="keys" onblur="if(this.value == '') { this.value = '<?php print t('Enter keyword to search'); ?>'; }" onfocus="if(this.value == '<?php print t('Enter keyword to search'); ?>') { this.value = ''; }" class="bar" />
-				  <input type="submit" name="op" id="SearchSubmit" class="go" value="<?php print t("Search") ?>" />
-				  <input type="hidden" name="form_token" id="edit-search-block-form-form-token" value="<?php print drupal_get_token("search_form") ?>"  />
-					<input type="hidden" name="form_id" id="edit-search-block-form" value="search_form"  />
-				</form>
-				</div>
-				<?php if (user_access('create video content')) { ?><a href="<?php print url('node/add/video') ?>" class="b-upload pv_addbtn"><?php print t('Upload') ?></a><?php } ?>	
+				<div class="header-box">
+					<div class="bottom-align">
+					<!--search,upload-->
+						
+						<div class="search ">
+							<form action="<?php print url("search/node") ?>" id="SearchForm" method="post">
+								<input type="text" value="<?php print t('Enter keyword to search'); ?>" id="searchBox" name="keys" onblur="if(this.value == '') { this.value = '<?php print t('Enter keyword to search'); ?>'; }" onfocus="if(this.value == '<?php print t('Enter keyword to search'); ?>') { this.value = ''; }" class="bar" />
+							  <input type="submit" name="op" id="SearchSubmit" class="go" value="<?php print t("Search") ?>" />
+							  <input type="hidden" name="form_token" id="edit-search-block-form-form-token" value="<?php print drupal_get_token("search_form") ?>"  />
+								<input type="hidden" name="form_id" id="edit-search-block-form" value="search_form"  />
+							</form>
+						</div>
 			</div>
+				</div>
+					</div>
 			<div class="span2">
-			<!--account-->
-				<?php
-			$out = '';
-			if ($user->uid) {
-			  $out .= '<a href="'.url('user/'.$user->uid).'">'.t('Account').'</a> | <a href="'.url('user/logout').'">'.t('Log out').'</a>';
-			} else {
-			  $out .= '<a href="'.url('user').'">'.t('Log in').'</a> | <a href="'.url('user/register').'">'.t('Sign up').'</a>';
-			}
-			print '<div class="pv-user">'.$out.'</div>';
-				?>
+				<div class="header-box">
+					<div class="bottom-align">
+						<select id="mselect"></select>
+						<?php if (user_access('create video content')) { ?><a href="<?php print url('node/add/video') ?>" class="b-upload pv_addbtn"><?php print t('Upload') ?></a><?php } ?>	
+						<!--account-->
+							<?php
+						$out = '';
+						if ($user->uid) {
+						  $out .= '<a href="'.url('user/'.$user->uid).'">'.t('Account').'</a> | <a href="'.url('user/logout').'">'.t('Log out').'</a>';
+						} else {
+						  $out .= '<a href="'.url('user').'">'.t('Log in').'</a> | <a href="'.url('user/register').'">'.t('Sign up').'</a>';
+						}
+						print '<div class="pv-user">'.$out.'</div>';
+							?>
+					</div>
+				</div>	
 			</div>
 		</div>
 	</div>
 </div>
 <div class="container-out pvcontent">
-	<div class="row-fluid">
-		<!--msgs,tabs-->
-      <div class="span12 offset2">
-        <?php /*<div class="breadcrumb"><?php print $breadcrumb; ?></div> */ ?>
-        <?php if (isset($messages)) { print $messages; } ?>
-        <?php if($tabs) { print render($tabs); } ?>
-      </div>
-    </div>
+	
 	<div class="row-fluid">
 		<div class="span2">
 			<!--catbar-->
 			<?php print render($page['sidebar_left']); ?>
 		</div>
 		<div class="span10">
+			<?php if($messages) { ?>
+			<div class="row-fluid">
+				<!--msgs,tabs-->
+				  <div class="span12">
+						<?php /*<div class="breadcrumb"><?php print $breadcrumb; ?></div> */ ?>
+						<?php  print $messages; ?>
+				  </div>
+			</div>
+			<?php } ?>
+			<?php if($tabs = render($tabs)) { ?>
+			<div class="row-fluid">
+				<!--tabs-->
+				  <div class="span12">
+						<?php  print render($tabs); ?>
+				  </div>
+			</div>
+			<?php } ?>
 			<!--content-->
 			<?php if(drupal_is_front_page()) { ?>
 			<div class="row-fluid">
