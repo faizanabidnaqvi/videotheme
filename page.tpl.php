@@ -10,39 +10,41 @@ $content = render($page['content']);
 			<!--logo-->
 				<div class="logo"><a href="<?php print check_url($front_page); ?>" title="<?php print $site_name; ?>"><img src="<?php print $logo; ?>" alt="<?php print $site_name; ?>" /></a></div>
 			</div>
-			<div class="span8">
-				<div class="header-box">
-					<div class="bottom-align">
-					<!--search,upload-->
-						
-						<div class="search ">
-							<form action="<?php print url("search/node") ?>" id="SearchForm" method="post">
-								<input type="text" value="<?php print t('Enter keyword to search'); ?>" id="searchBox" name="keys" onblur="if(this.value == '') { this.value = '<?php print t('Enter keyword to search'); ?>'; }" onfocus="if(this.value == '<?php print t('Enter keyword to search'); ?>') { this.value = ''; }" class="bar" />
-							  <input type="submit" name="op" id="SearchSubmit" class="go" value="<?php print t("Search") ?>" />
-							  <input type="hidden" name="form_token" id="edit-search-block-form-form-token" value="<?php print drupal_get_token("search_form") ?>"  />
-								<input type="hidden" name="form_id" id="edit-search-block-form" value="search_form"  />
-							</form>
+			<div class="span10">
+				<div class="span8">
+					<div class="header-box">
+						<div class="bottom-align">
+						<!--search,upload-->
+							
+							<div class="search ">
+								<form action="<?php print url("search/node") ?>" id="SearchForm" method="post">
+									<input type="text" value="<?php print t('Enter keyword to search'); ?>" id="searchBox" name="keys" onblur="if(this.value == '') { this.value = '<?php print t('Enter keyword to search'); ?>'; }" onfocus="if(this.value == '<?php print t('Enter keyword to search'); ?>') { this.value = ''; }" class="bar" />
+								  <input type="submit" name="op" id="SearchSubmit" class="go" value="<?php print t("Search") ?>" />
+								  <input type="hidden" name="form_token" id="edit-search-block-form-form-token" value="<?php print drupal_get_token("search_form") ?>"  />
+									<input type="hidden" name="form_id" id="edit-search-block-form" value="search_form"  />
+								</form>
+							</div>
 						</div>
-			</div>
+					</div>
 				</div>
+				<div class="span4">
+					<div class="header-box">
+						<div class="bottom-align">
+							<select id="mselect"></select>
+							<?php if (user_access('create video content')) { ?><a href="<?php print url('node/add/video') ?>" class="b-upload pv_addbtn"><?php print t('Upload') ?></a><?php } ?>	
+							<!--account-->
+								<?php
+							$out = '';
+							if ($user->uid) {
+							  $out .= '<a href="'.url('user/'.$user->uid).'">'.t('Account').'</a> | <a href="'.url('user/logout').'">'.t('Log out').'</a>';
+							} else {
+							  $out .= '<a href="'.url('user').'">'.t('Log in').'</a> | <a href="'.url('user/register').'">'.t('Sign up').'</a>';
+							}
+							print '<div class="pv-user">'.$out.'</div>';
+								?>
+						</div>
 					</div>
-			<div class="span2">
-				<div class="header-box">
-					<div class="bottom-align">
-						<select id="mselect"></select>
-						<?php if (user_access('create video content')) { ?><a href="<?php print url('node/add/video') ?>" class="b-upload pv_addbtn"><?php print t('Upload') ?></a><?php } ?>	
-						<!--account-->
-							<?php
-						$out = '';
-						if ($user->uid) {
-						  $out .= '<a href="'.url('user/'.$user->uid).'">'.t('Account').'</a> | <a href="'.url('user/logout').'">'.t('Log out').'</a>';
-						} else {
-						  $out .= '<a href="'.url('user').'">'.t('Log in').'</a> | <a href="'.url('user/register').'">'.t('Sign up').'</a>';
-						}
-						print '<div class="pv-user">'.$out.'</div>';
-							?>
-					</div>
-				</div>	
+				</div>
 			</div>
 		</div>
 	</div>
