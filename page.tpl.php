@@ -10,8 +10,8 @@ $content = render($page['content']);
 			<!--logo-->
 				<div class="logo"><a href="<?php print check_url($front_page); ?>" title="<?php print $site_name; ?>"><img src="<?php print $logo; ?>" alt="<?php print $site_name; ?>" /></a></div>
 			</div>
-			<div class="span10">
-				<div class="span8">
+			<div class="span10 no-margins">
+				<div class="span7">
 					<div class="header-box">
 						<div class="bottom-align">
 						<!--search,upload-->
@@ -27,7 +27,7 @@ $content = render($page['content']);
 						</div>
 					</div>
 				</div>
-				<div class="span4">
+				<div class="span5">
 					<div class="header-box">
 						<div class="bottom-align">
 							<select id="mselect"></select>
@@ -52,11 +52,11 @@ $content = render($page['content']);
 <div class="container-out pvcontent">
 	
 	<div class="row-fluid">
-		<div class="span2">
+		<div class="span2 full-height content-border top-padding">
 			<!--catbar-->
 			<?php print render($page['sidebar_left']); ?>
 		</div>
-		<div class="span10">
+		<div class="span10 top-padding">
 			<?php if($messages) { ?>
 			<div class="row-fluid">
 				<!--msgs,tabs-->
@@ -76,16 +76,16 @@ $content = render($page['content']);
 			<?php } ?>
 			<!--content-->
 			<?php if(drupal_is_front_page()) { ?>
-			<div class="row-fluid">
-				<div class="span8">
+			<div class="row-fluid row-bottom-border">
+				<div class="span7" style="padding-right:1.5641%;border-right:1px solid #acacac">
 				<!--video-->
 					<div class="pv-video" id="pvvideo">
 						<?php print render($page['sidebar_home_player']); ?>
 					</div>
 				</div>
-				<div class="span4">
+				<div class="span5" style="margin-left:1%">
 				<!--best videos-->
-					<div class="pv-video-blk">
+					<div class="pv-video-blk block">
 						<?php render($page['sidebar_tabs']); ?>
 						<?php print provideo_set_tabs(FALSE, FALSE, FALSE, TRUE); ?>
 				  </div>
@@ -101,16 +101,16 @@ $content = render($page['content']);
 			</div>
 			<?php } elseif($set_video = provideo_set_video(FALSE, TRUE) ) { ?>
 			<div class="row-fluid">
-				<div class="span8">
+				<div class="span7" >
 				<!--video-->
 					<div class="pv-video pv-node" id="pvvideo">
 					<?php print $set_video; ?>
 					</div>
 					<?php print $content; ?>
 				</div>
-				<div class="span4">
+				<div class="span5" >
 				<!--best videos-->
-					<div class="pv-video-blk">
+					<div class="pv-video-blk block">
 					<?php render($page['sidebar_tabs']); ?>
 					<?php print provideo_set_tabs(FALSE, FALSE, FALSE, TRUE); ?>
 					</div>
@@ -136,7 +136,7 @@ $content = render($page['content']);
 		</div>
 	</div>
 </div>
-<div class="container-fluid pvheader">
+<div class="container-fluid pvheader footer">
 	<div class="container-out">
 		<div class="row-fluid">
 			<div class="span2">

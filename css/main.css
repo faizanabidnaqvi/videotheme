@@ -1,7 +1,7 @@
 body {
 	background: fixed #f5f7fa;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 12px;
+	/*font-family: 'Open Sans', sans-serif; modded*/
+	font-size: 11px;
 	background-repeat:no-repeat;
 	/*background-position:50% 146px;*/
 	background-position:50% 0px;
@@ -9,7 +9,32 @@ body {
 
 .pvheader {
 	background: #FFF;
-	border-bottom: 5px solid #3498db;
+	border-bottom: 1px solid #3498db;
+}
+
+/*start theming videos of the month*/
+.views-field-title, .views-field-title a{
+	color:#137937;
+	font-weight:bold;
+	font-size:16px;
+}
+
+.views-field-user, .views-field-user a{
+	color:#757575;
+}
+
+.views-field-value{
+	color:#e80f0f;
+	display:inline-block;
+}
+
+.views-field-totalcount{
+	display:inline-block;
+}
+/*end theming*/
+
+.row-bottom-border{
+	border-bottom:1px solid #acacac;
 }
 
 .clr {
@@ -128,14 +153,18 @@ body {
 */
 .pvcontent {
 	background: #FFF;
-	margin-bottom: 1px;
+	margin-bottom: 0px; /*modded*/
 	border-right: 1px solid #eaedf2;
 	border-bottom: 1px solid #eaedf2;
 	border-left: 1px solid #eaedf2;
+	overflow:hidden; /*modded*/
 }
+
+
 .footer {
-  border: 1px solid #eaedf2;
-	margin:10px 0 0 0;
+  border-top: 1px solid #eaedf2;
+  border-bottom:none;
+	margin:0px 0 0 0;/*modded*/
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
@@ -236,15 +265,18 @@ h3.title b {
 
 .block h4 {
 	color: #000;
-	font-size: 18px;
+	font-size: 14px;/*modded prev 12*/
 	font-weight: normal;
-	padding: 10px;
+	padding: 0px; /*modded prev 10*/
 	background-color: #f5f7fa;
 	margin: 0;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
 	line-height: 18px;
+	/*added*/
+	text-transform:uppercase;
+	font-weight:bold
 }
 .block .content {
 	padding: 10px 0px 10px 0px;
@@ -378,7 +410,7 @@ h3.title b {
 }
 
 .pv-video-blk {
-  width: 242px;
+ /* width: 242px; modded*/
   /*min-height: 470px; temporarily disabled*/
 }
 #tab_menu {
@@ -394,7 +426,7 @@ h3.title b {
 	float: left;
 	background-color: #fafaf5;
 	border: solid 1px #eaedf2;
-	padding: 10px 10px;
+	padding: 5px 5px;
 	margin: 0px 5px -1px 0px;
 	position: relative;
 	cursor: pointer;
@@ -438,7 +470,7 @@ h3.title b {
 	float: none;
 	margin: 0;
 	background-color: #fafaf5;
-	padding: 10px 0 10px 0;
+	padding: 5px 0 5px 0;
 	border: solid 1px #eaedf2;
 	border-top: none;
 }
@@ -450,11 +482,11 @@ h3.title b {
 .tab_sidebar_list .views-field-field-video img
 {
   float: left;
-  width: 91px;
-  margin: 0 10px 0px 10px;
+ /* width: 91px;
+  margin: 0 10px 0px 10px; modded*/
 }
 .tab_sidebar_list .views-field-title {
-  margin: 0 5px 0px 0px;
+  margin: 0 0px 0px 0px;
   padding: 0;
   line-height: 17px;
 }

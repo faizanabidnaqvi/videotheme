@@ -440,7 +440,7 @@ function provideo_set_tabs($bid, $title, $content, $isout = false) {
 	$i = 0;
 	foreach ($tabs as $data) {
 		if (!$i) $ac = ' class="current"'; else  $ac = '';
-		$out_t .= '<li'.$ac.'><a rel="tab_sidebar_'.$data->bid.'">'.$data->title.'</a></li>';
+		$out_t .= '<li'.$ac.'><a rel="tab_sidebar_'.$data->bid.'">'.'<h4>'.$data->title.'</h4></a></li>';
 		//$out_c .= '<div style="display: none;" id="tab_sidebar_'.$data->bid.'" class="tab_sidebar_list">'.$data->content.'</div>';
 		$out_c .= '<div style="display: none;" id="tab_sidebar_'.$data->bid.'" class="tab_sidebar_list">'.$data->content.'</div>';
 		$i++;
