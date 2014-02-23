@@ -4,8 +4,8 @@ $n1 = $n2 = '';
 $i = $j = 1;
 foreach ($rows as $id => $row) {
     $n1 .= ''.$row.'';
-    if ($i == 4) {
-      $n2 .= ''.$n1.''.provideo_set_bic($j);
+    if ($i == 5) {
+      $n2 .= ''.$n1.'</div><div class="row-fluid">'.provideo_set_bic($j).'</div><div class="row-fluid">';
       $i = 1;
       $n1 = '';
       $j++;
@@ -14,9 +14,9 @@ foreach ($rows as $id => $row) {
     }
 }
 if ($n1) { 
-  $n2 .= ''.$n1.''.provideo_set_bic($j);
+  $n2 .= ''.$n1.'</div><div class="row-fluid">'.provideo_set_bic($j).'</div>';
 }
 if ($n2) { 
-  print '<div class="row">'.$n2.'</div>';
+  print '<div class="row-fluid">'.$n2.'</div>';
 }
 ?>

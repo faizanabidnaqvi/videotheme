@@ -16,23 +16,28 @@ if (empty($statistics)) {
 }
 if ($teaser) { 
 $rate = rate_get_results('node', $node->nid, 1);
+$likes = rate_get_results('node', $node->nid, 3);
 ?>
 <div id="node-<?php print $node->nid; ?>" class="span2 <?php print $classes; ?>"<?php print $attributes; ?>>
+  <?php/* commented because it is not needed in our theme
   <div class="hover">
     <div class="hover-in">
       <?php print render($title_prefix); ?>
       <?php print render($title_suffix); ?>
       <a href="<?php print $node_url; ?>" class="play"><?php print t('Play'); ?></a>
       <div class="stat"><?php print t('!count views in !time',array('!count' => $statistics['totalcount'], '!time' => format_interval(time() - $node->created,1))); ?></div>
-      <?php /*print render($content['rate_fivestar']);*/ ?>
+      
       <?php if (isset($content['unwatched_link'])) print $content['unwatched_link']; ?>
     </div>
   </div>
+  */?>
   <?php if (isset($content['field_featured']['#items'][0]['value']) and $content['field_featured']['#items'][0]['value']) {?><a href="<?php print $node_url; ?>"><div class="pv-featured"><div class="pv-featured-in"><?php print t('Featured'); ?></div></div></a><?php } ?>
   <?php if (isset($content['field_recommended']['#items'][0]['value']) and $content['field_recommended']['#items'][0]['value']) {?><a href="<?php print $node_url; ?>"><div class="pv-recommended"><div class="pv-recommended-in"><?php print t('Recommended'); ?></div></div></a><?php } ?>
-  <div class="img1"><?php print render($content['field_video']); ?></div>
-  <h2><a href="<?php print $node_url; ?>"><?php print truncate_utf8($title, 70, FALSE, TRUE); ?></a></h2>
-  
+  <div class="img1"><a href="<?php print $node_url; ?>" ><?php print render($content['field_video']); ?></a></div>
+  <div class="views-field-title"><a href="<?php print $node_url; ?>"><?php print truncate_utf8($title, 70, FALSE, TRUE); ?></a></div>
+  <div class="views-field-name"><?php print 'by '.$name; ?></div>
+  <div class="views-field-totalcount"><?php print $statistics['totalcount'].' views'; ?></div>
+  <div class="views-field-value"><?php print $likes['count'].' Likes'; ?></div>
   <?php //print '<pre>'. check_plain(print_r($content['field_featured']['#items'][0], 1)) .'</pre>'; ?>
 </div>
 <?php } else { ?>

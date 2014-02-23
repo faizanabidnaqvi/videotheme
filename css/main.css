@@ -12,6 +12,14 @@ body {
 	border-bottom: 1px solid #3498db;
 }
 
+.total-users{
+	color:#000;
+	font-size:9px;
+	vertical-align:bottom;
+	margin-left:10px;
+	/*line-height:0px;*/
+}
+
 /*start theming videos of the month*/
 .views-field-title, .views-field-title a{
 	color:#137937;
@@ -19,7 +27,11 @@ body {
 	font-size:16px;
 }
 
-.views-field-user, .views-field-user a{
+.region-home-summary .views-field-title a{
+	font-size:12px;
+}
+
+.views-field-name, .views-field-name a{
 	color:#757575;
 }
 
@@ -29,6 +41,22 @@ body {
 }
 
 .views-field-totalcount{
+	display:inline-block;
+}
+
+.region-home-summary .block h4{
+	color:#000 ;
+	font-size:16px ;
+	text-transform:capitalize;
+	
+}
+
+.region-home-summary .block{
+	border-top:1px solid #acacac;
+	padding-top:10px;
+}
+
+.view-id-home_player .views-field-name{
 	display:inline-block;
 }
 /*end theming*/
@@ -58,7 +86,7 @@ body {
 .pvheader ul.menu li a {
 	color: #3397db;
 	font-size: 14px;
-	font-weight: normal;
+	font-weight: bold;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
@@ -298,7 +326,8 @@ h3.title b {
 	line-height: 18px;
 }
 .footer .block .content {
-	padding: 10px 10px 10px 20px;
+	/*padding: 10px 10px 10px 20px; modded*/
+	padding: 25px 10px 10px 0px;
 	margin:0;
 }
 
@@ -371,6 +400,7 @@ h3.title b {
 	border-radius: 2px;
 	text-decoration: none;
 	z-index: 12;
+	border: 1px solid #acacac;
 }
 .node-video.node-teaser .hover .stat, .node-embedded-video.node-teaser .hover .stat {
 	padding-top: 10px;
@@ -391,19 +421,37 @@ h3.title b {
 	font-weight: bold;
 	text-shadow: 0 1px 0 rgba(7,7,7,.15);
 	background: #3498db;
-	line-height: 32px;
-	padding: 10px 13px 10px 13px;
+	line-height: 28px;
+	padding: 9px 13px 9px 13px;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
 	text-decoration: none;
+	margin-left:1%;
+	border:1px solid #acacac;
 }
+
+.b-signin {
+	color: #f1f3f8;
+	font-size: 12px;
+	font-weight: bold;
+	text-shadow: 0 1px 0 rgba(7,7,7,.15);
+	background: #3498db;
+	line-height: 28px;
+	padding: 9px 13px 9px 13px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	text-decoration: none;
+	border:none;
+}
+
 .b-upload:hover {
 	color: #f1f3f8;
 	text-decoration: none;
 }
 .pv-user {
-  margin: 6px 20px 0 20px;
+  margin: 0px 0px 0 0px;
   /*float: left; Modded*/
   display: inline-block;
   color: #ccc;
@@ -666,6 +714,7 @@ h2.heading {
 	text-decoration: none;
 	border: none;
 	margin-right: 10px;
+	border:1px solid #acacac;
 }
 .form-submit:hover {
 	color: #f1f3f8;
